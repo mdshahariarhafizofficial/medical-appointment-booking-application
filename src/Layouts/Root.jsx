@@ -5,11 +5,15 @@ import Footer from '../Components/Footer/Footer';
 
 const Root = () => {
     return (
-        <div>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
-        </div>
+        <>
+                <Navbar></Navbar>
+                <div className='bg-[#0F0F0F20]'>
+                    <div className='min-h-[calc(100vh-382px)]'>
+                        <Outlet></Outlet>
+                    </div>
+                </div>
+                <Footer></Footer>
+        </>
     );
 };
 
