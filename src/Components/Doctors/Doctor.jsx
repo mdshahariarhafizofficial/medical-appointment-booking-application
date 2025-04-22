@@ -2,7 +2,7 @@ import React from "react";
 import { BiRegistered } from "react-icons/bi";
 
 const Doctor = ({ doctor }) => {
-    const {image, name, education, specialty,experience,registrationNumber} = doctor;
+    const {image, name, education, experience, registrationNumber} = doctor;
   return (
     <div>
       <div className="card bg-base-100 shadow-sm p-6 space-y-4 rounded-xl">
