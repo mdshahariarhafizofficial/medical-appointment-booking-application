@@ -1,5 +1,6 @@
 import React from "react";
 import { BiRegistered } from "react-icons/bi";
+import { Link } from "react-router";
 
 const Doctor = ({ doctor }) => {
     const {image, name, education, experience, registrationNumber} = doctor;
@@ -27,7 +28,9 @@ const Doctor = ({ doctor }) => {
             <p className="text-base text-gray-500 flex items-center gap-3">
                 {<BiRegistered size={22}></BiRegistered>} Reg No: {registrationNumber}
             </p>
-            <button className="mt-5 w-full rounded-full bg-transparent hover:bg-blue-600 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent">View Details</button>
+            <Link to={`/doctor/${registrationNumber}`}>
+                <button className="mt-5 w-full rounded-full bg-transparent hover:bg-blue-600 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent">View Details</button>
+            </Link>
           </div>
         </div>
       </div>
