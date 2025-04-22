@@ -2,7 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router';
 import Root from '../Layouts/Root';
 import Home from '../Pages/Home/Home';
-import MyBookings from '../Pages/MyBookins/MyBookings';
+import MyBookings from '../Pages/MyBooking/MyBookings';
 import Blogs from '../Pages/Blogs/Blogs';
 import ContactUs from '../Pages/ContactUs/ContactUs';
 
@@ -10,10 +10,13 @@ const router = createBrowserRouter([
     {
       path: '/',
       Component: Root,
+      errorElement: <p>404 not found!</p>,
       children: [
         {
             index: true,
-            Component: Home
+            Component: Home,
+            hydrateFallbackElement: <p>Loading....</p>,
+            loader: ()=> fetch('doctors.json')
         },
         {
             path: "my-bookings",
@@ -23,10 +26,6 @@ const router = createBrowserRouter([
             path: "blogs",
             Component: Blogs
         },
-        {
-            path: 'contact-us',
-            Component: ContactUs
-        }
       ]
     }
   ])
