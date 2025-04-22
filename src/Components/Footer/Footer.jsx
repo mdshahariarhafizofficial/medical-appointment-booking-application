@@ -6,17 +6,17 @@ import { FaFacebook, FaGithub, FaTwitter, FaYoutube } from "react-icons/fa";
 const Footer = () => {
     const FooterMenu = 
     <>
-        <li className="text-lg font-medium mr-0">
-            <NavLink to='/' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >Home</NavLink>
+        <li className="text-lg font-medium">
+            <NavLink to='/' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none pb-2": ""} >Home</NavLink>
         </li>
-        <li className="text-lg font-medium mr-0">
-            <NavLink to='/a' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >My-Bookings</NavLink>
+        <li className="text-lg font-medium">
+            <NavLink to='/my-bookings' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none pb-2": ""} >My-Bookings</NavLink>
         </li>
-        <li className="text-lg font-medium mr-0">
-            <NavLink to='/a' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >Blogs</NavLink>
+        <li className="text-lg font-medium">
+            <NavLink to='/blogs' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none pb-2": ""} >Blogs</NavLink>
         </li>
-        <li className="text-lg font-medium mr-0">
-            <NavLink to='/a' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >Contact Us</NavLink>
+        <li className="text-lg font-medium">
+            <NavLink to='/contact-us' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none pb-2": ""} >Contact Us</NavLink>
         </li>
     </>
 

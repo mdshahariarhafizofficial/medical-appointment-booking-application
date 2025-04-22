@@ -9,18 +9,18 @@ const Navbar = () => {
                 <NavLink to='/' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >Home</NavLink>
             </li>
             <li className="text-lg font-medium mr-6">
-                <NavLink to='/a' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >My-Bookings</NavLink>
+                <NavLink to='/my-bookings' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >My-Bookings</NavLink>
             </li>
             <li className="text-lg font-medium mr-6">
-                <NavLink to='/a' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >Blogs</NavLink>
+                <NavLink to='/blogs' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >Blogs</NavLink>
             </li>
             <li className="text-lg font-medium mr-6">
-                <NavLink to='/a' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >Contact Us</NavLink>
+                <NavLink to='/contact-us' className={({isActive})=> isActive? "text-blue-600 border-b-2 rounded-none": ""} >Contact Us</NavLink>
             </li>
         </>
   return (
     <div className="bg-[#0F0F0F20]">
-        <div className="navbar max-w-[1281px] mx-auto">
+        <div className="navbar px-0 py-4 max-w-[1281px] mx-auto">
             {/* Nav Start */}
         <div className="navbar-start">
             <div className="dropdown">
