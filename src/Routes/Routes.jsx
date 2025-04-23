@@ -7,6 +7,7 @@ import Blogs from '../Pages/Blogs/Blogs';
 import DoctorDetails from '../Pages/DoctorsDetails/DoctorDetails';
 import NotFound from '../Pages/Error/NotFound';
 import NoDoctorFound from '../Pages/Error/NoDoctorFound';
+import Loader from '../Components/Loader/Loader';
 
 const router = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
         {
             index: true,
             Component: Home,
-            hydrateFallbackElement: <p>Loading....</p>,
+            hydrateFallbackElement: <Loader></Loader>,
             loader: ()=> fetch('../doctors.json')
         },
         {
@@ -27,11 +28,13 @@ const router = createBrowserRouter([
         {
             path: "blogs",
             Component: Blogs,
-            loader: ()=> fetch('../blogs.json')
+            loader: ()=> fetch('../blogs.json'),
+            hydrateFallbackElement: <Loader></Loader>,
         },{
           path: '/doctor/:reg',
           Component: DoctorDetails,
           loader: ()=> fetch('../doctors.json'),
+          hydrateFallbackElement: <Loader></Loader>,
           errorElement: <NoDoctorFound></NoDoctorFound>,
         },
       ]

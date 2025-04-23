@@ -15,7 +15,7 @@ const Hero = () => {
                 </form>
                 <div className='flex gap-6 flex-col lg:flex-row justify-center'>
                     <img src={bannerImg1} alt="" />
-                    <img className='w-[578px] h-[350px] object-cover rounded-2xl' src={bannerImg2} alt="" />
+                    <img className='lg:w-[578px] md:w-full lg:h-[350px] object-cover rounded-2xl' src={bannerImg2} alt="" />
                 </div>
             </div>
         </div>
