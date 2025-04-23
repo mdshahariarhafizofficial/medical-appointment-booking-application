@@ -4,7 +4,6 @@ import Root from '../Layouts/Root';
 import Home from '../Pages/Home/Home';
 import MyBookings from '../Pages/MyBooking/MyBookings';
 import Blogs from '../Pages/Blogs/Blogs';
-import ContactUs from '../Pages/ContactUs/ContactUs';
 import DoctorDetails from '../Pages/DoctorsDetails/DoctorDetails';
 import NotFound from '../Pages/Error/NotFound';
 import NoDoctorFound from '../Pages/Error/NoDoctorFound';
