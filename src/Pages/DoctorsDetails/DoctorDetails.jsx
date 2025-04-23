@@ -3,6 +3,7 @@ import { BiRegistered } from 'react-icons/bi';
 import { PiWarningOctagon } from 'react-icons/pi';
 import { Link, useLoaderData, useParams } from 'react-router';
 import { addDataToLocalStorage } from '../../Utility/localStorage';
+import { toast } from 'react-toastify';
 
 
 const DoctorDetails = () => {
@@ -11,7 +12,8 @@ const DoctorDetails = () => {
     const doctorDetails = doctors.find(doctor => doctor.registrationNumber === reg);
     const {name, education, designation, workplace, fee, availability, experience, gender, specialties, image, registrationNumber} = doctorDetails;
     const handleBooking = ()=>{
-        addDataToLocalStorage(doctorDetails)        
+        addDataToLocalStorage(doctorDetails)
+        toast.success(`Appointment Schedule for ${name} Successful!`)        
     }
 
     return (

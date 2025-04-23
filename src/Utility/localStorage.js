@@ -11,7 +11,7 @@ export const addDataToLocalStorage = (info)=>{
     const bookings = getDataFromLocalStorage();
     const isExist = bookings.find(b => b.id === info.id);
     if (isExist) {  
-        alert('already added')  
+        alert('already added') 
     }else{
         bookings.push(info)
     }

@@ -3,6 +3,7 @@ import { getDataFromLocalStorage, removeDataFromLocalStorage } from "../../Utili
 import Booking from "./Booking";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Link } from "react-router";
+import { toast } from "react-toastify";
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 const getPath = (x, y, width, height) => {
@@ -26,6 +27,7 @@ const MyBookings = () => {
     const handleDelete = (id)=>{
       removeDataFromLocalStorage(id)
       setBookings(getDataFromLocalStorage())
+      toast.error("Appointment  Canceled!")
     }
 
   return (

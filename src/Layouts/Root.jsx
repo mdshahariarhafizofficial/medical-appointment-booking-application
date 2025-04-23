@@ -5,6 +5,7 @@ import Footer from '../Components/Footer/Footer';
 import Loader from '../Components/Loader/Loader';
 
 const Root = () => {
+
     const [isLoading, setIsLoading]= useState(true);
     useEffect(()=>{
         setTimeout(()=>{
