@@ -7,6 +7,11 @@ import { toast } from 'react-toastify';
 
 
 const DoctorDetails = () => {
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const d = new Date();
+    let day = weekday[d.getDay()];
+        
+
     const doctors = useLoaderData();
     const {reg} = useParams()
     const doctorDetails = doctors.find(doctor => doctor.registrationNumber === reg);
@@ -65,8 +70,11 @@ const DoctorDetails = () => {
                 <h2 className='text-4xl font-extrabold'>Book an Appointment</h2>
                 <div className='flex flex-col md:flex-row justify-between items-center py-4 border-t-2 border-dashed border-gray-300 border-b-2 border-b-black'>
                     <h1 className='text-2xl font-bold'>Availability</h1>
-                    <div className="badge rounded-full text-[#09982F] bg-[#09982F30] p-3">
-                        Doctor Available Today   
+                    <div className={`${availability.find(aDay => aDay === day) ? 'text-[#09982F] bg-[#09982F30]': 'text-[#FFB539] bg-[#FFB53930]'} badge rounded-full p-3`}>
+                        {
+                             `Doctor ${availability.find(aDay => aDay === day) ? 'Available': 'Not Available'} Today`
+                        }
+                           
                     </div>
                 </div>
                 <div>

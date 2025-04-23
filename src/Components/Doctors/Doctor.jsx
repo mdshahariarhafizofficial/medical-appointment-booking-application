@@ -3,7 +3,11 @@ import { BiRegistered } from "react-icons/bi";
 import { Link } from "react-router";
 
 const Doctor = ({ doctor }) => {
-    const {image, name, education, experience, registrationNumber} = doctor;
+  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const d = new Date();
+  let day = weekday[d.getDay()];
+
+    const {image, name, education, experience, registrationNumber, availability} = doctor;
   return (
     <div>
       <div className="card bg-base-100 shadow-sm p-6 space-y-4 rounded-xl">
@@ -14,7 +18,10 @@ const Doctor = ({ doctor }) => {
           />
         </figure>
         <div className="card-actions">
-            <div className="badge rounded-full text-[#09982F] bg-[#09982F30] p-3">Available</div>
+          {
+            availability.find(aDay => aDay === day) ?             <div className="badge rounded-full text-[#09982F] bg-[#09982F30] p-3">Available</div> : <div className="badge rounded-full text-[#FFB539] bg-[#FFB53930] p-3">Not Available</div>
+            
+          }
             <div className="badge text-[#176AE5] bg-[#176AE530] p-3 rounded-full">{experience}  experience</div>
           </div>
         <div className="">
