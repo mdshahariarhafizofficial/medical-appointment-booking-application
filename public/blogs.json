@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "heading": "What is useState and how does it work in React?",
+      "body": "The useState hook is a fundamental part of React that allows functional components to maintain internal state. When invoked, it returns a pair: the current state value and a function that lets you update it. Updating the state triggers a re-render of the component, ensuring that the UI stays in sync with the latest data.",
+      "date": "2025-04-22"
+    },
+    {
+      "id": 2,
+      "heading": "What is the purpose of useEffect in React?",
+      "body": "useEffect is used for handling side effects in functional components, such as API calls, subscriptions, and manually modifying the DOM. It runs after every render by default, but you can control its execution by specifying dependencies. It also supports cleanup functions, making it ideal for managing lifecycles like mounting and unmounting.",
+      "date": "2025-04-21"
+    },
+    {
+      "id": 3,
+      "heading": "What is a custom hook in React and when should you use one?",
+      "body": "A custom hook is a function that starts with 'use' and allows you to reuse stateful logic between components. It can call other hooks like useState and useEffect. Custom hooks are useful when you notice repeating logic across components and want to encapsulate that logic for cleaner, more maintainable code.",
+      "date": "2025-04-20"
+    },
+    {
+      "id": 4,
+      "heading": "Difference between controlled and uncontrolled components? Which one is better?",
+      "body": "Controlled components rely on React state to manage input values, making them predictable and easier to validate. Uncontrolled components manage their own state internally and are accessed using refs. Controlled components are generally preferred due to better integration with React's architecture and easier debugging.",
+      "date": "2025-04-19"
+    },
+    {
+      "id": 5,
+      "heading": "Tell us something about useFormStatus()",
+      "body": "useFormStatus is a hook introduced in Next.js with the App Router that allows developers to track the state of a form submission when using server actions. It provides real-time feedback such as whether a form is currently submitting, which helps enhance the user experience by enabling loading indicators or disabling buttons during submission.",
+      "date": "2025-04-18"
+    }
+  ]
+  
