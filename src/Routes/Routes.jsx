@@ -7,6 +7,7 @@ import Blogs from '../Pages/Blogs/Blogs';
 import ContactUs from '../Pages/ContactUs/ContactUs';
 import DoctorDetails from '../Pages/DoctorsDetails/DoctorDetails';
 import NotFound from '../Pages/Error/NotFound';
+import NoDoctorFound from '../Pages/Error/NoDoctorFound';
 
 const router = createBrowserRouter([
     {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
           path: '/doctor/:reg',
           Component: DoctorDetails,
           loader: ()=> fetch('../doctors.json'),
-          errorElement: <p>No Doctor Found!</p>,
+          errorElement: <NoDoctorFound></NoDoctorFound>,
         },
       ]
     }
