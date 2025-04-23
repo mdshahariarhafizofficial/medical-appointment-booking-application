@@ -6,12 +6,13 @@ import MyBookings from '../Pages/MyBooking/MyBookings';
 import Blogs from '../Pages/Blogs/Blogs';
 import ContactUs from '../Pages/ContactUs/ContactUs';
 import DoctorDetails from '../Pages/DoctorsDetails/DoctorDetails';
+import NotFound from '../Pages/Error/NotFound';
 
 const router = createBrowserRouter([
     {
       path: '/',
       Component: Root,
-      errorElement: <p>404 not found!</p>,
+      errorElement: <NotFound></NotFound>,
       children: [
         {
             index: true,
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
         },{
           path: '/doctor/:reg',
           Component: DoctorDetails,
-          loader: ()=> fetch('../doctors.json')
+          loader: ()=> fetch('../doctors.json'),
+          errorElement: <p>No Doctor Found!</p>,
         },
       ]
     }

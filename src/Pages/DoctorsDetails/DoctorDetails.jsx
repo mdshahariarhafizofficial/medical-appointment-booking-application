@@ -2,13 +2,18 @@ import React from 'react';
 import { BiRegistered } from 'react-icons/bi';
 import { PiWarningOctagon } from 'react-icons/pi';
 import { Link, useLoaderData, useParams } from 'react-router';
+import { addDataToLocalStorage } from '../../Utility/localStorage';
+
 
 const DoctorDetails = () => {
     const doctors = useLoaderData();
-    const {reg} = useParams();
-    
+    const {reg} = useParams()
     const doctorDetails = doctors.find(doctor => doctor.registrationNumber === reg);
-    const {name, education, designation, workplace, fee, availability, experience, gender, specialties, image, registrationNumber} = doctorDetails; 
+    const {name, education, designation, workplace, fee, availability, experience, gender, specialties, image, registrationNumber} = doctorDetails;
+    const handleBooking = ()=>{
+        addDataToLocalStorage(doctorDetails)
+    }
+    
     return (
         <div className='max-w-[1281px] mx-auto py-8 px-5 lg:px-0'>
 
@@ -72,9 +77,8 @@ const DoctorDetails = () => {
                 </div>
 
                 <Link to=''>
-                        <button className="mt-5 w-full rounded-full bg-blue-600 text-white font-semibold hover:text-black hover:bg-transparent py-2 px-4 border border-blue-500 hover:border">Book Appointment Now</button>
+                        <button onClick={handleBooking} className="mt-5 w-full rounded-full bg-blue-600 text-white font-semibold hover:text-black hover:bg-transparent py-2 px-4 border border-blue-500 hover:border">Book Appointment Now</button>
                 </Link>
-
                 </div>
             </div>
 
