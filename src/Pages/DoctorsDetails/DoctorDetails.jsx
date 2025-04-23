@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BiRegistered } from 'react-icons/bi';
 import { PiWarningOctagon } from 'react-icons/pi';
 import { Link, useLoaderData, useParams } from 'react-router';
@@ -11,12 +11,11 @@ const DoctorDetails = () => {
     const doctorDetails = doctors.find(doctor => doctor.registrationNumber === reg);
     const {name, education, designation, workplace, fee, availability, experience, gender, specialties, image, registrationNumber} = doctorDetails;
     const handleBooking = ()=>{
-        addDataToLocalStorage(doctorDetails)
+        addDataToLocalStorage(doctorDetails)        
     }
-    
+
     return (
         <div className='max-w-[1281px] mx-auto py-8 px-5 lg:px-0'>
-
             <div className='text-center space-y-4 p-6 md:p-16 bg-white rounded-xl'>
                 <h2 className='text-4xl font-extrabold'>Doctor’s Profile Details</h2>
                 <p className='text-[#0F0F0F]'>

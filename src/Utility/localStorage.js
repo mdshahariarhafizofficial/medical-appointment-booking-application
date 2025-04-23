@@ -18,3 +18,9 @@ export const addDataToLocalStorage = (info)=>{
     localStorage.setItem('booking', JSON.stringify(bookings))
 }
 
+export const removeDataFromLocalStorage = (id)=>{
+    const bookings = getDataFromLocalStorage();
+    const remainingBooking = bookings.filter(booking => booking.id !== id);
+    localStorage.setItem('booking', JSON.stringify(remainingBooking))
+}
+

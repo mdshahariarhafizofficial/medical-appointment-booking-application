@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getDataFromLocalStorage } from "../../Utility/localStorage";
+import { getDataFromLocalStorage, removeDataFromLocalStorage } from "../../Utility/localStorage";
 import Booking from "./Booking";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Link } from "react-router";
@@ -17,13 +17,17 @@ const TriangleBar = (props) => {
   return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
-
 const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
     const savedBookings = getDataFromLocalStorage();
     setBookings(savedBookings);
   }, []);
+    const handleDelete = (id)=>{
+      removeDataFromLocalStorage(id)
+      setBookings(getDataFromLocalStorage())
+    }
+
   return (
     <div className="max-w-[1281px] mx-auto py-8 px-5 lg:px-0">
       {/* Rechart */}
@@ -76,7 +80,11 @@ const MyBookings = () => {
       {/* Bookings */}
       <div className="flex flex-col gap-6">
         {bookings.map((booking) => (
-          <Booking key={booking.id} booking={booking}></Booking>
+          <Booking 
+          key={booking.id}
+          booking={booking}
+          handleDelete = {handleDelete}
+          ></Booking>
         ))}
       </div>
     </div>
