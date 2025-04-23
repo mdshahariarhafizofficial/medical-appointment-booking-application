@@ -76,7 +76,7 @@ const DoctorDetails = () => {
                     <p>Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</p>
                 </div>
 
-                <Link to=''>
+                <Link to='/my-bookings'>
                         <button onClick={handleBooking} className="mt-5 w-full rounded-full bg-blue-600 text-white font-semibold hover:text-black hover:bg-transparent py-2 px-4 border border-blue-500 hover:border">Book Appointment Now</button>
                 </Link>
                 </div>
