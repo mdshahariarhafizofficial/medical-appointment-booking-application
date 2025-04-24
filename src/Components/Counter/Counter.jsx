@@ -19,7 +19,7 @@ const Counter = () => {
                     <h2 className='text-5xl font-bold'>
                         <CountUp
                             end={199}
-                            duration={5}
+                            duration={15}
                         ></CountUp>
                         +</h2>
                     <p className='text-[#0F0F0F90] font-semibold'>Total Doctors</p>
@@ -29,7 +29,7 @@ const Counter = () => {
                     <h2 className='text-5xl font-bold'>
                         <CountUp
                             end={467}
-                            duration={5}
+                            duration={15}
                         ></CountUp>
                         +</h2>
                     <p className='text-[#0F0F0F90] font-semibold'>Total Reviews</p>
@@ -39,7 +39,7 @@ const Counter = () => {
                     <h2 className='text-5xl font-bold'>
                         <CountUp
                             end={1900}
-                            duration={5}
+                            duration={15}
                         ></CountUp>
                         +</h2>
                     <p className='text-[#0F0F0F90] font-semibold'>Patients</p>
@@ -49,7 +49,7 @@ const Counter = () => {
                     <h2 className='text-5xl font-bold'>
                         <CountUp
                             end={300}
-                            duration={5}
+                            duration={15}
                         ></CountUp>
                         +</h2>
                     <p className='text-[#0F0F0F90] font-semibold'>Total Stuffs</p>
