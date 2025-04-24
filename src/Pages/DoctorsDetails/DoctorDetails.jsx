@@ -1,8 +1,8 @@
 import React, { } from 'react';
 import { BiRegistered } from 'react-icons/bi';
 import { PiWarningOctagon } from 'react-icons/pi';
-import { Link, useLoaderData, useParams } from 'react-router';
-import { addDataToLocalStorage } from '../../Utility/localStorage';
+import { useLoaderData, useNavigate, useParams } from 'react-router';
+import { addDataToLocalStorage, getDataFromLocalStorage } from '../../Utility/localStorage';
 import { toast } from 'react-toastify';
 
 
@@ -11,14 +11,22 @@ const DoctorDetails = () => {
     const d = new Date();
     let day = weekday[d.getDay()];
         
-
     const doctors = useLoaderData();
     const {reg} = useParams()
     const doctorDetails = doctors.find(doctor => doctor.registrationNumber === reg);
-    const {name, education, designation, workplace, fee, availability, experience, gender, specialties, image, registrationNumber} = doctorDetails;
-    const handleBooking = ()=>{
-        addDataToLocalStorage(doctorDetails)
-        toast.success(`Appointment Schedule for ${name} Successful!`)        
+    const {id,name, education, designation, workplace, fee, availability, experience, gender, specialties, image, registrationNumber} = doctorDetails;
+    const navigate = useNavigate();
+
+    const handleBooking = (id)=>{
+        const bookings = getDataFromLocalStorage();
+        const isExist = bookings.find(b => b.id === id);
+        if (isExist) {  
+            toast.error("Appointment Already Added!")
+        }else{
+            addDataToLocalStorage(doctorDetails)
+            toast.success(`Appointment Schedule for ${name} Successful!`)
+            navigate('/my-bookings')
+        }     
     }
 
     return (
@@ -85,9 +93,7 @@ const DoctorDetails = () => {
                     <p>Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</p>
                 </div>
 
-                <Link to='/my-bookings'>
-                        <button onClick={handleBooking} className="mt-5 w-full rounded-full bg-blue-600 text-white font-semibold hover:text-black hover:bg-transparent py-2 px-4 border border-blue-500 hover:border">Book Appointment Now</button>
-                </Link>
+                        <button onClick={()=>handleBooking(id)} className="mt-5 w-full rounded-full bg-blue-600 text-white font-semibold hover:text-black hover:bg-transparent py-2 px-4 border border-blue-500 hover:border">Book Appointment Now</button>
                 </div>
             </div>
 
