@@ -78,7 +78,7 @@ const DoctorDetails = () => {
                 <h2 className='text-4xl font-extrabold'>Book an Appointment</h2>
                 <div className='flex flex-col md:flex-row justify-between items-center py-4 border-t-2 border-dashed border-gray-300 border-b-2 border-b-black'>
                     <h1 className='text-2xl font-bold'>Availability</h1>
-                    <div className={`${availability.find(aDay => aDay === day) ? 'text-[#09982F] bg-[#09982F30]': 'text-[#FFB539] bg-[#FFB53930]'} badge rounded-full p-3`}>
+                    <div className={`${availability.find(aDay => aDay === day) ? 'text-[#09982F] bg-[#09982F30]': 'text-red-600 bg-[#ff393930]'} badge rounded-full p-3`}>
                         {
                              `Doctor ${availability.find(aDay => aDay === day) ? 'Available': 'Not Available'} Today`
                         }
@@ -86,7 +86,7 @@ const DoctorDetails = () => {
                     </div>
                 </div>
                 <div>
-                <div className={`badge h-auto md:h-16 lg:h-10 flex items-center gap-1 rounded-full ${availability.find(aDay => aDay === day) ? 'text-[#09982F] bg-[#09982F30]': 'text-[#FFB539] bg-[#FFB53930]'} p-2 my-10`}>
+                <div className={`badge h-auto md:h-16 lg:h-10 flex items-center gap-1 rounded-full ${availability.find(aDay => aDay === day) ? 'text-[#09982F] bg-[#09982F30]': 'text-red-600 bg-[#ff393930]'} p-2 my-10`}>
                     <span>
                         <PiWarningOctagon size={25}></PiWarningOctagon>
                     </span>
@@ -98,10 +98,10 @@ const DoctorDetails = () => {
                 <div>
                     {
                         availability.find(aDay => aDay === day) ? 
-                        <button onClick={()=>handleBooking(id)} className="mt-5 w-full rounded-full bg-blue-600 text-white font-semibold hover:text-black hover:bg-transparent py-2 px-4 border border-blue-500 hover:border">Book Appointment Now</button>
+                        <button onClick={()=>handleBooking(id)} className="mt-5 w-full rounded-full bg-blue-600 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2">Book Appointment Now</button>
                         : 
                         <Link to='/'>
-                            <button type="button" className="w-full text-red-600 hover:text-white border-3 border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Doctor Not Available Today (Go To Home Page)</button>
+                            <button type="button" className="w-full text-red-600 hover:text-white border-3 border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 shadow-lg shadow-red-500/50 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Doctor Not Available Today (Go To Home Page)</button>
                         </Link>
                     }
                 </div>
