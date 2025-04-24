@@ -7,7 +7,7 @@ const Doctor = ({ doctor }) => {
   const d = new Date();
   let day = weekday[d.getDay()];
 
-    const {image, name, education, experience, registrationNumber, availability} = doctor;
+    const {image, name, education, experience, registrationNumber, availability, specialty} = doctor;
   return (
     <div>
       <div className="card bg-base-100 shadow-sm p-6 space-y-4 rounded-xl">
@@ -19,7 +19,7 @@ const Doctor = ({ doctor }) => {
         </figure>
         <div className="card-actions">
           {
-            availability.find(aDay => aDay === day) ?             <div className="badge rounded-full text-[#09982F] bg-[#09982F30] p-3">Available</div> : <div className="badge rounded-full text-[#FFB539] bg-[#FFB53930] p-3">Not Available</div>
+            availability.find(aDay => aDay === day) ?  <div className="badge rounded-full text-[#09982F] bg-[#09982F30] p-3">Available</div> : <div className="badge rounded-full text-[#FFB539] bg-[#FFB53930] p-3">Not Available</div>
             
           }
             <div className="badge text-[#176AE5] bg-[#176AE530] p-3 rounded-full">{experience}  experience</div>
@@ -29,7 +29,7 @@ const Doctor = ({ doctor }) => {
             {name}
           </h2>
           <p className="text-base text-gray-500 mb-2">
-            {education}
+            {education} - {specialty}
           </p>
           <div className="py-2 border-t-2 border-dashed border-gray-300">
             <p className="text-base text-gray-500 flex items-center gap-3">

@@ -10,7 +10,7 @@ const Root = () => {
     useEffect(()=>{
         setTimeout(()=>{
             setIsLoading(false);
-        },2500)
+        },500)
     },[])
 
     return (
