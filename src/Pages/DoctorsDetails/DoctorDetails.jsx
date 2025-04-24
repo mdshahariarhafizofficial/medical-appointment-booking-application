@@ -21,7 +21,7 @@ const DoctorDetails = () => {
         const bookings = getDataFromLocalStorage();
         const isExist = bookings.find(b => b.id === id);
         if (isExist) {  
-            toast.error("Appointment Already Added!")
+            toast.error("Appointment Already Booked!")
         }else{
             addDataToLocalStorage(doctorDetails)
             toast.success(`Appointment Schedule for ${name} Successful!`)
@@ -93,7 +93,17 @@ const DoctorDetails = () => {
                     <p>Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.</p>
                 </div>
 
+
+                {/* Button */}
+                <div>
+                    {
+                        availability.find(aDay => aDay === day) ? 
                         <button onClick={()=>handleBooking(id)} className="mt-5 w-full rounded-full bg-blue-600 text-white font-semibold hover:text-black hover:bg-transparent py-2 px-4 border border-blue-500 hover:border">Book Appointment Now</button>
+                        : 
+                        <button type="button" className="w-full text-red-600 hover:text-white border-3 border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">Doctor Not Available Today (Go To Home)</button>
+                    }
+                </div>
+
                 </div>
             </div>
 
