@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Doctor from './Doctor';
+import { FaUserDoctor } from 'react-icons/fa6';
 
 const Doctors = ({data}) => {
     const [doctors, setDoctors] = useState([]);
@@ -14,6 +15,13 @@ const Doctors = ({data}) => {
                 <h2 className='text-4xl font-extrabold'>Our Best Doctors</h2>
                 <p className='text-[#0F0F0F]'>Our team of top-rated doctors combines years of experience, advanced medical knowledge, and a deep commitment to patient care.<br/> Each of them is dedicated to providing personalized, compassionate treatment to help you live a healthier life.</p>
             </div>
+            {/* Not Found */}
+            <div className={`${doctors.length > 0 && 'hidden'} text-center space-y-5 bg-white py-10 px-5 rounded-2xl my-8`}>
+                <FaUserDoctor className='mx-auto' size={90} color='#2050FF'></FaUserDoctor>
+                <h2 className='text-5xl font-black'>Doctor Not Found!</h2>
+                <p className='text-blue-600 font-semibold'>" Please Search Valid Doctor Name "</p>
+            </div>
+
             {/* Doctors */}
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8'>
                 {

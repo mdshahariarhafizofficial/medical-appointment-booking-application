@@ -7,3 +7,6 @@ body{
 body button{
     cursor: pointer;
 }
+html {
+  scroll-behavior: smooth;
+}
